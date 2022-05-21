@@ -1,0 +1,49 @@
+.profile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(7em, auto);
+    grid-gap: 4em;
+    margin: 3em;
+}
+
+.profile-card {
+    background: transparent linear-gradient(180deg, #179ADECC 0%, #1B82B8CC 100%) 0% 0% no-repeat padding-box;
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+    display: flex;
+    flex-direction: column;
+
+    padding: 1em;
+    align-items: center;
+}
+
+.statistics {
+    background: transparent linear-gradient(180deg, #179ADECC 0%, #1B82B8CC 100%) 0% 0% no-repeat padding-box;
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.schedule {
+    background: transparent linear-gradient(180deg, #179ADECC 0%, #1B82B8CC 100%) 0% 0% no-repeat padding-box;
+
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.profile-picture {
+    background-color: gray;
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+    margin-top: 1em;
+}
+
+.profile-text {
+    margin-top: 2em;
+}
