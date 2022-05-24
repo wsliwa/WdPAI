@@ -81,6 +81,18 @@ input {
         height: 7em;
         margin: 2em;
     }
+    
+    header {
+        width: 100vw;
+    }
+
+    nav {
+        height: 100vh;
+    }
+
+    .profile{
+        font-size: 1em;
+    }
 }
 
 .base-container {
