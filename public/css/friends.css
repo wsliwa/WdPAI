@@ -1,0 +1,13 @@
+.friends-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(2.8em, auto);
+    grid-gap: 1em;
+}
+
+.friend {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    background-color: black;
+}
