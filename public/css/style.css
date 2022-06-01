@@ -87,6 +87,14 @@ input {
         height: 7em;
         margin: 2em;
     }
+
+    li {
+        font-size: smaller;
+    }
+
+    a {
+        font-size: smaller;
+    }
 }
 
 .base-container {
