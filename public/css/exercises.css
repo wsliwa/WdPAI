@@ -45,3 +45,22 @@
     width: auto;
     margin-left: auto;
 }
+
+@media only screen and (max-device-width: 600px) {
+    .exercises-type {
+        font-size: 20px;
+    }
+
+    .search-button {
+        font-size: 20px;
+    }
+
+    .new-exercise {
+        font-size: 20px;
+    }
+
+    .search-bar {
+        gap: 1em;
+    }
+    
+}
