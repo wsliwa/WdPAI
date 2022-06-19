@@ -1,0 +1,66 @@
+.content-block {
+    height: 100%;
+    padding: 3em;
+}
+
+.exercise-block {
+    height: 100%;
+    background: transparent linear-gradient(180deg, #179BE0 0%, #0C4E70 100%) 0% 0% no-repeat padding-box;
+    padding: 1em;
+}
+
+.search-bar{
+    border: 1px solid black;
+    height: 5vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+}
+
+
+
+.exercise-list{
+    border: 1px solid black;
+    height: 90%;
+    width: 100%;
+    margin-top: 1em;
+
+}
+
+.search-button {
+    background: white;
+    border-radius: 10%;
+    border: none;
+    margin: 0em;
+    width: auto;
+}
+
+.new-exercise {
+    background-color: skyblue;
+    border-radius: 10%;
+    border: none;
+    margin: 0em;
+    width: auto;
+    margin-left: auto;
+}
+
+@media only screen and (max-device-width: 600px) {
+    .exercises-type {
+        font-size: 20px;
+    }
+
+    .search-button {
+        font-size: 20px;
+    }
+
+    .new-exercise {
+        font-size: 20px;
+    }
+
+    .search-bar {
+        gap: 1em;
+    }
+    
+}

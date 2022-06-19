@@ -29,7 +29,7 @@
     
 }
 
-.schedule {
+.planned-exercises {
     background: transparent linear-gradient(180deg, #179ADECC 0%, #1B82B8CC 100%) 0% 0% no-repeat padding-box;
 
     grid-row-start: 3;
@@ -41,9 +41,9 @@
 .profile-picture {
     background-color: gray;
     border-radius: 50%;
-    width: 5em;
-    height: 5em;
-    margin-top: 1em;
+    width: 9em;
+    height: 9em;
+    margin-top: 3em;
 }
 
 .profile-text {
@@ -76,26 +76,73 @@
 }
 
 
-.schedule-title{
+.planned-exercises-title{
     color: white;
     font-size: 2em;
     text-align: center;
 }
 
-.days {
+.plans {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
-.day {
-    height: 16em;
-    width: 100%;
+.plans-block {
+    height: 7em;
+    width: auto;
     background-color: rgb(50 165 221);
     border: 2px solid gray
 }
 
-.day > .title {
+.plans-block > .title {
     color: white;
     text-align: center;
     display: block;
 }
+
+@media only screen and (max-device-width: 600px) {
+    .profile{
+        grid-gap: 2em;
+    }
+
+    .profile-card {
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .profile-picture {
+        width: 4em;
+        height: 4em;
+        margin-top: 1em;
+    }
+
+    .profile-text {
+
+        display: block;
+        text-align: center;
+    }
+
+    .statistics {
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .stat-title {
+        font-size: 1.5em;
+    }
+
+    .stat {
+        font-size: 0.7em;
+    }
+
+    .planned-exercises {
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    .plans-block {
+        height: 5em;
+    }
+    
+}
+
