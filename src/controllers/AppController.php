@@ -1,11 +1,15 @@
 <?php
 
+require_once __DIR__.'/../Utility/Session.php';
+
 class AppController {
 
     private $request;
+    protected $session;
 
     public function __construct()
     {
+        $this->session = new Session();
         $this->request = $_SERVER['REQUEST_METHOD'];
     }
 

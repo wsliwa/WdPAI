@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <?
+    include("public/core/head.php")
+    ?>
     <title>LOGIN PAGE</title>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 </head>
@@ -23,6 +25,7 @@
                 <input name="email" type="text" placeholder="email@email.com">
                 <input name="password" type="password" placeholder="password">
                 <button type="submit">LOGIN</button>
+                <button onclick="location.href='signup'" type="button">SIGN UP</button>
             </form>
         </div>
     </div>
