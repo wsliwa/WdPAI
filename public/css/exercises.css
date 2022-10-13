@@ -106,6 +106,10 @@
     border-radius: 30px;
 }
 
+form {
+    height: auto;
+}
+
 @media only screen and (max-device-width: 600px) {
     .exercises-type {
         font-size: 20px;

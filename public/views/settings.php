@@ -45,24 +45,6 @@
                             ');
                         }
                     ?>
-<!--                    <div class="exercise-settings">-->
-<!--                        <div>Name of exercise: --><?//= $exercise->getExerciseName(); ?><!--</div>-->
-<!--                        <div>Type of exercise: --><?//= $exercise->getTypeName(); ?><!--</div>-->
-<!--                        <div>Exercise created by: --><?//= $exercise->getCreatedBy(); ?><!--</div>-->
-<!--                        <div>Statistic tittle: --><?//= $exercise->getStatisticName(); ?><!--</div>-->
-<!--                    </div>-->
-<!--                    <div class="exercise-choice">-->
-<!--                        <form class="exercise-form exercise-form-choice" action="accept_ex" method="POST"-->
-<!--                              ENCTYPE="multipart/form-data">-->
-<!--                            <input type="hidden" name="id" value='--><?//= $exercise->getId() ?><!--'>-->
-<!--                            <button class="new-exercise" type="submit">Accept</button>-->
-<!--                        </form>-->
-<!--                        <form class="exercise-form exercise-form-choice" action="add_ex" method="POST"-->
-<!--                              ENCTYPE="multipart/form-data">-->
-<!--                            <input type="hidden" name="id" value='--><?//= $exercise->getId() ?><!--'>-->
-<!--                            <button class="new-exercise" type="submit">Reject</button>-->
-<!--                        </form>-->
-<!--                    </div>-->
                 </div>
             </div>
         </div>

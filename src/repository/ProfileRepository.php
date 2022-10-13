@@ -2,6 +2,7 @@
 
 require_once 'Repository.php';
 require_once __DIR__.'/../models/Profile.php';
+require_once __DIR__.'/../models/Schedule.php';
 
 class ProfileRepository extends Repository
 {
@@ -110,5 +111,25 @@ class ProfileRepository extends Repository
         }
 
         return $file_path['image'];
+    }
+
+    public function getSchedule()
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT e.name name, et.name type, schedule.date FROM schedule INNER JOIN exercises e on e.id = schedule.id_exercise INNER JOIN exercise_types et on et.id = e.id_type ORDER BY schedule.date
+        ');
+        $stmt->execute();
+
+        $schedule = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$schedule) {
+            return null;
+        }
+
+        return new Schedule(
+            $schedule['name'],
+            $schedule['type'],
+            $schedule['date']
+        );
     }
 }

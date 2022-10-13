@@ -85,13 +85,15 @@
 .plans {
     display: flex;
     flex-direction: column;
+    height: 90%;
+    font-size: 3vw;
 }
 
 .plans-block {
-    height: 7em;
     width: auto;
     background-color: rgb(50 165 221);
-    border: 2px solid gray
+    border: 2px solid gray;
+    height: 100%;
 }
 
 .plans-block > .title {

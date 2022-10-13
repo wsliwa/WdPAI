@@ -31,7 +31,8 @@ class ProfileController extends AppController
             header("Location: {$url}/login");
         }
         $profile = $this->profileRepository->getProfile($_SESSION['user']);
-        $this->render('profile', ['profile' => $profile]);
+        $schedule = $this->profileRepository->getSchedule();
+        $this->render('profile', ['profile' => $profile, 'schedule' => $schedule]);
     }
 
     public function profile_settings(array $message = [])

@@ -56,6 +56,20 @@ class ExercisesController extends AppController
         $this->render('settings', ['exercise' => $exercise, 'messages' => $message]);
     }
 
+    public function exercise(array $message = [])
+    {
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        if (!isset($_SESSION['role'])) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+        }
+
+        $exercise = $this->exerciseRepository->getExerciseByID($_POST['id']);
+        $this->render('exercise', ['exercise' => $exercise, 'messages' => $message]);
+    }
+
     public function add_ex()
     {
         if ($this->isPost()) {
@@ -114,5 +128,18 @@ class ExercisesController extends AppController
         }
     }
 
+    public function schedule_ex()
+    {
+        if ($this->isPost()) {
+            $userID = $this->userRepository->getUserID($_POST['email']);
+
+            $this->exerciseRepository->scheduleExercise($userID, $_POST['id'], $_POST['schedule']);
+
+            $this->exercise(['Scheduled exercise']);
+        }
+        else {
+            $this->settings(['Could not schedule exercise']);
+        }
+    }
 
 }
