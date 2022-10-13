@@ -1,6 +1,7 @@
 .content-block {
     height: 100%;
     padding: 3em;
+    overflow: hidden;
 }
 
 .exercise-block {
@@ -10,7 +11,6 @@
 }
 
 .search-bar{
-    border: 1px solid black;
     height: 5vh;
     width: 100%;
 
@@ -19,14 +19,8 @@
     gap: 3em;
 }
 
-
-
-.exercise-list{
-    border: 1px solid black;
-    height: 90%;
-    width: 100%;
-    margin-top: 1em;
-
+.exercise-tbody {
+    border-spacing: 10vw 2vw;
 }
 
 .search-button {
@@ -44,6 +38,72 @@
     margin: 0em;
     width: auto;
     margin-left: auto;
+}
+
+.exercise-list {
+    border: 3px solid white;
+    height: 90%;
+    width: 100%;
+    margin-top: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-y: scroll;
+}
+
+.exercise-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exercise-link-tittle {
+    width: 80%;
+}
+
+.exercise {
+    border-spacing: 13vw 2vw;
+}
+
+.exercise-tittle {
+    font-size: 4vw;
+}
+
+.add-exercise-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.exercise-form {
+    margin-top: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    padding: 1em;
+}
+
+.exercise-select {
+    border: 0;
+    font-size: 2vw;
+    background-color: #1382bc;
+    color: white;
+}
+
+.exercise-choice {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5vw;
+}
+
+.exercise-form-choice {
+    height: auto;
+    padding: 3vw;
+    border-radius: 30px;
 }
 
 @media only screen and (max-device-width: 600px) {
