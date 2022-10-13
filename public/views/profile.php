@@ -39,8 +39,9 @@
             </header>
             <section class="profile">
                 <div class="profile-card">
-                    <div class="profile-picture"></div>
-                    <div class="profile-text">Name Surname</div>
+                    <div class="profile-picture"><img src="public/uploads/<?= $profile->getImage() ?>"></div>
+                    <div class="profile-text"><?= $profile->getUserName() ?></div>
+                    <button type="button" class="profile-btn"><a href="profile_settings" class="profile-link">Settings</a></button>
                 </div>
 
                 <div class="statistics">
