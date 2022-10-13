@@ -39,11 +39,8 @@
 }
 
 .profile-picture {
-    background-color: gray;
-    border-radius: 50%;
     width: 9em;
     height: 9em;
-    margin-top: 3em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,6 +100,10 @@
     display: block;
 }
 
+.profile-settings-form {
+    height: auto;
+}
+
 @media only screen and (max-device-width: 600px) {
     .profile{
         grid-gap: 2em;
@@ -146,6 +147,8 @@
     .plans-block {
         height: 5em;
     }
+
+
     
 }
 

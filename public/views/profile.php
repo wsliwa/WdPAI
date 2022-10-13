@@ -1,47 +1,31 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css" />
+    <?
+    include("public/core/head.php")
+    ?>
     <link rel="stylesheet" type="text/css" href="public/css/profile.css">
-
-    <script src="https://kit.fontawesome.com/307549276f.js" crossorigin="anonymous"></script>
     <title>MY PROFILE</title>
 </head>
 <body>
     <div class="base-container">
-        <nav>
-            <img src="public/img/logo.svg">
-            <ul>
-                <li>
-                    <i class="fa-solid fa-address-card"></i>
-                    <a href="#" class="button">My Profile</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-dumbbell"></i>
-                    <a href="#" class="button">My Exercises</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-user-group"></i>
-                    <a href="#" class="button">Friends</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-inbox"></i>
-                    <a href="#" class="button">Inbox</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <a href="#" class="button">Logout</a>
-                </li>
-            </ul>
-        </nav>
+        <?
+            include("public/core/navbar.php")
+        ?>
         <main>
             <header>
                 My Profile
             </header>
             <section class="profile">
                 <div class="profile-card">
-                    <div class="profile-picture"><img src="public/uploads/<?= $profile->getImage() ?>"></div>
-                    <div class="profile-text"><?= $profile->getUserName() ?></div>
-                    <button type="button" class="profile-btn"><a href="profile_settings" class="profile-link">Settings</a></button>
+<!--                    TODO fix it-->
+                    <div class="profile-picture">
+                        <img src="public/uploads/<?= $profile->getImage(); ?>">
+<!--                        <img src="public/uploads/temp.png">-->
+                    </div>
+                    <div class="profile-text">
+                        <?= $profile->getUserName() ?>
+                    </div>
+                    <button onclick="location.href='profile_settings'" type="button" class="profile-btn" > Settings</button>
                 </div>
 
                 <div class="statistics">
