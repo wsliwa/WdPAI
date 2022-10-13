@@ -95,5 +95,42 @@ class ExerciseRepository extends Repository
         $stmt->execute();
     }
 
+    public function getExerciseByID(int $id): ?Exercise
+    {
+        $stmt = $this->database->connect()->prepare("
+            SELECT exercises.id, et.name type, exercises.name, u.email, exercises.status, exercises.statistic_name FROM exercises
+            INNER JOIN exercise_types et on et.id = exercises.id_type
+            INNER JOIN users u on u.id = exercises.created_by
+            WHERE exercises.id = :id LIMIT 1
+        ");
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $exercise = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$exercise) {
+            return null;
+        }
+
+        return new Exercise(
+            $exercise['id'],
+            $exercise['type'],
+            $exercise['name'],
+            $exercise['email'],
+            $exercise['status'],
+            $exercise['statistic_name']
+        );
+    }
+
+    public function scheduleExercise(int $idUser, int $idExercise, string $date)
+    {
+        $stmt = $this->database->connect()->prepare("
+            INSERT INTO public.schedule (id_user, id_exercise, date)
+            VALUES (:idUser, :idExercise, :date);
+        ");
+        $stmt->bindParam(':idUser', $idUser, PDO::PARAM_INT);
+        $stmt->bindParam(':idExercise', $idExercise, PDO::PARAM_INT);
+        $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+        $stmt->execute();
+    }
 
 }

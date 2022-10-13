@@ -33,7 +33,13 @@
                             </tr>
                             <? foreach ($exercises as $exercise): ?>
                                 <tr>
-                                    <td><?= $exercise->getExerciseName(); ?></td>
+
+                                    <td>
+                                        <form action="exercise" method="POST" ENCTYPE="multipart/form-data">
+                                            <input type="hidden" name="id" value='<?= $exercise->getId() ?>'>
+                                            <button class="new-exercise" type="submit"><?= $exercise->getExerciseName(); ?></button>
+                                        </form>
+                                    </td>
                                     <td><?= $exercise->getTypeName(); ?></td>
                                     <td><?= $exercise->getCreatedBy(); ?></td>
                                 </tr>

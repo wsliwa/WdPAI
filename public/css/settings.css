@@ -10,3 +10,16 @@
     gap: 4vh;
     font-size: 3vw;
 }
+
+.exercise-choice {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5vw;
+}
+
+.exercise-form-choice {
+    height: auto;
+    padding: 3vw;
+    border-radius: 30px;
+}
