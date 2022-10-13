@@ -1,0 +1,12 @@
+.settings-tittle {
+    font-size: 5vw;
+}
+
+.exercise-settings {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vh;
+    font-size: 3vw;
+}

@@ -1,59 +1,49 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <?
+    include("public/core/head.php")
+    ?>
     <link rel="stylesheet" type="text/css" href="public/css/exercises.css">
 
-    <script src="https://kit.fontawesome.com/307549276f.js" crossorigin="anonymous"></script>
-    <title>FRIENDS</title>
+    <title>EXERCISES</title>
 </head>
 <body>
-    <div class="base-container">
-        <nav>
-            <img src="public/img/logo.svg">
-            <ul>
-                <li>
-                    <i class="fa-solid fa-address-card"></i>
-                    <a href="#" class="button">My Profile</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-dumbbell"></i>
-                    <a href="#" class="button">My Exercises</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-user-group"></i>
-                    <a href="#" class="button">Friends</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-inbox"></i>
-                    <a href="#" class="button">Inbox</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <a href="#" class="button">Logout</a>
-                </li>
-            </ul>
-        </nav>
-        <main>
-            <header>
-                Exercises
-            </header>
-            <div class="content-block">
-                <div class="exercise-block">
-                    <div class="search-bar">
-                        <select name="exercises-type">
-                            <option value="Endurance">Endurance</option>
-                            <option value="Strength">Strength</option>
-                            <option value="Sports Training">Sports Training</option>
-                            <option value="Custom">Custom</option>
-                        </select>
-                        <button class="search-button">Search</button>
-                        <button class="new-exercise">Add new exercise</button>
-                    </div>
-                    <div class="exercise-list">
-
+<div class="base-container">
+    <?
+    include("public/core/navbar.php")
+    ?>
+    <main>
+        <header>
+            Exercises
+        </header>
+        <div class="content-block">
+            <div class="exercise-block">
+                <div class="search-bar">
+                    <button class="new-exercise" onclick="location.href='add_exercise'">Add new exercise</button>
+                </div>
+                <div class="exercise-list">
+                    <div class="exercise-tittle">Exercises</div>
+                    <div class="exercise-link-tittle">
+                        <table class="exercise-table">
+                            <tbody class="exercise-tbody">
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Author</th>
+                            </tr>
+                            <? foreach ($exercises as $exercise): ?>
+                                <tr>
+                                    <td><?= $exercise->getExerciseName(); ?></td>
+                                    <td><?= $exercise->getTypeName(); ?></td>
+                                    <td><?= $exercise->getCreatedBy(); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
+        </div>
+    </main>
+</div>
 </body>
